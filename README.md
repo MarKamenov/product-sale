@@ -82,8 +82,10 @@ I always strive to keep a clean git history and I find conventional commits do a
 ## Next Steps
 
 Areas for improvement:
-
+- Implement state management
 - Unit test coverage
 - E2E test coverage
 - Code splitting (into smaller components)
 - Abstracting localStorage methods - perhaps to some kind of utility/class/service
+- Build Node server
+- Full stack connection
