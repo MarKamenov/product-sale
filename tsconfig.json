@@ -25,6 +25,8 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src/**/*", // Include your main project files
+    "cypress/**/*", // Include Cypress files for TypeScript parsing
+    "cypress.config.ts"
   ]
 }

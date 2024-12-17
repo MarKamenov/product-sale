@@ -1,6 +1,7 @@
 
 import { Box, Button, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { FC } from 'react';
 
 
 import { BarChart } from '@mui/x-charts';
@@ -12,7 +13,7 @@ export interface ISale {
   saleAmount: number;
 }
 
-const Dashboard: React.FC = () => {
+const Dashboard: FC = () => {
   const storedSales: ISale[] = JSON.parse(localStorage.getItem(STORAGE_KEY)!);
 
   const getCashier = (cashierId: number) => cashiers.find(c => c.id === cashierId)!.name;

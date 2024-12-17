@@ -3,7 +3,7 @@ import { Person } from '@mui/icons-material';
 import { Avatar, Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import cashiers from '../../data/cashier_sample.json';
 import { CashierContext } from '../../store/CashierContextProvider';
 import './SelectCashier.css';
@@ -13,7 +13,7 @@ export interface ICashier {
   name: string;
 }
 
-const SelectCashier: React.FC = () => {
+const SelectCashier: FC = () => {
   const navigate = useNavigate();
   const { changeCashier } = useContext(CashierContext);
 

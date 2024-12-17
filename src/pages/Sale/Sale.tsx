@@ -20,7 +20,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import AddIcon from '@mui/icons-material/Add';
@@ -39,7 +39,7 @@ interface IProduct {
   disabled?: boolean;
 }
 
-const Sale: React.FC = () => {
+const Sale: FC = () => {
   const [items, setItems] = useState<IProduct[]>([]);
   const [newProduct, setNewProduct] = useState<null | number>(null);
 

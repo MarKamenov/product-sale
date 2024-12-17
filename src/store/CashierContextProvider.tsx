@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, FC, ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import { ICashier } from "../pages/SelectCashier/SelectCashier";
 import { useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const initialState: IState = {
 
 export const CashierContext = createContext(initialState)
 
-export const CashierContextProvider: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+export const CashierContextProvider: FC<{ children?: ReactNode }> = ({ children }) => {
   const [cashier, setCashier] = useState<ICashier>(initialState.cashier);
   const navigate = useNavigate();
 
@@ -24,12 +24,20 @@ export const CashierContextProvider: React.FC<{ children?: React.ReactNode }> = 
     }
   }, [cashier.id, navigate])
 
-  const changeCashier = (cashier: ICashier) => {
+  const changeCashier = useCallback((cashier: ICashier) => {
     setCashier(cashier)
-  }
+  }, [])
+
+  const provider = useMemo(
+    () => ({
+      changeCashier,
+      cashier
+    }),
+    [cashier, changeCashier],
+  );
 
   return (
-    <CashierContext.Provider value={{ cashier, changeCashier }}>
+    <CashierContext.Provider value={provider}>
       {children}
     </CashierContext.Provider>
   );
