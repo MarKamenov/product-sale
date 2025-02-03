@@ -49,7 +49,9 @@ yarn run e2e
 
 I have used Cypress for a very simple e2e test suite using `cypress-cucumber` and the Gherkin language inside the `.feature` file. There is only one, but everything is setup, going forward will just be about imporving coverage.
 
-## Approach
+## Deployment
+
+This project is deployed on Vercel and can be accessed at: [https://product-sale-mu.vercel.app/](https://product-sale-mu.vercel.app/)
 
 ### Boilerplate
 
